@@ -1,0 +1,9 @@
+1. Activate venv:
+	open powershell and then: cd C:\Hadi\venvs\fm-yolov8\Scripts
+				  activate.ps1
+2. open and run 1-ls_label_stats_v2.py according to the instruction inside.
+
+3. open and run 2-ls_label_stats_norm8.py according to the instruction inside.
+
+3. open and run 3-ls_to_yolo_and_rendering_norm8.py according to the instruction inside.
+
