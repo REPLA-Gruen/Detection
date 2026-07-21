@@ -1,0 +1,13 @@
+Start with: 
+C:\Hadi\venvs\fm-yolo11\Scripts\Activate.ps1
+
+
+
+
+ yolo checks Then run: 
+
+C:\Hadi\Foreign_Material\Code\Jun26\Benchmark_T500\01_smoke_test.ps1
+C:\Hadi\Foreign_Material\Code\Jun26\Benchmark_T500\02_train_yolov8m.ps1
+C:\Hadi\Foreign_Material\Code\Jun26\Benchmark_T500\03_train_yolo11m.ps1
+C:\Hadi\Foreign_Material\Code\Jun26\Benchmark_T500\04_eval_compare.ps1
+C:\Hadi\Foreign_Material\Code\Jun26\Benchmark_T500\05_generate_report2

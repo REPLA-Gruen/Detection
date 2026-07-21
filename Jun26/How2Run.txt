@@ -1,0 +1,6 @@
+C:\Hadi\venvs\fm-yolo11\Scripts\Activate.ps1
+
+python C:\Hadi\Foreign_Material\Code\Python\Jun26\01_analyze_yolo_dataset.py `
+  --dataset_root "C:\Hadi\Foreign_Material\Data\Ours\Jun-26" `
+  --yaml "C:\Hadi\Foreign_Material\Data\Ours\Jun-26\data.yaml" `
+  --output_dir "C:\Hadi\Foreign_Material\Runs\dataset_analysis\Jun-26_raw_corrected_from_scratch"

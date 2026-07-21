@@ -1,0 +1,19 @@
+Copy to:
+C:\Hadi\Foreign_Material\Code\Python\Jun26\report2_benchmark_v1_1_enhanced_logging
+
+Run:
+
+C:\Hadi\venvs\fm-yolo11\Scripts\Activate.ps1
+cd C:\Hadi\Foreign_Material\Code\Python\Jun26\report2_benchmark_v1_1_enhanced_logging
+
+.\00_smoke_test.ps1
+
+.\01_train_A_yolov8m_noaug.ps1
+.\02_train_A_yolo11m_noaug.ps1
+.\03_train_B2_yolov8m_noaug.ps1
+.\04_train_B2_yolo11m_noaug.ps1
+.\05_train_B1_yolov8m_cls_noaug.ps1
+.\06_train_B1_yolo11m_cls_noaug.ps1
+
+.\07_unified_eval_noaug_enhanced.ps1
+.\08_generate_report2_draft_enhanced.ps1

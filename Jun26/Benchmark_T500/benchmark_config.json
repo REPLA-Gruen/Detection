@@ -1,0 +1,24 @@
+{
+  "dataset_yaml": "C:\\Hadi\\Foreign_Material\\Data\\Ours\\Jun-26_grouped_T500_split_80_10_10_v2\\data.yaml",
+  "test_images": "C:\\Hadi\\Foreign_Material\\Data\\Ours\\Jun-26_grouped_T500_split_80_10_10_v2\\images\\test",
+  "output_root": "C:\\Hadi\\Foreign_Material\\Runs\\T500_yolo_benchmark",
+  "imgsz": 960,
+  "epochs": 100,
+  "batch": 16,
+  "workers": 8,
+  "device": 0,
+  "seed": 42,
+  "patience": 50,
+  "conf": 0.25,
+  "iou": 0.60,
+  "class_names": [
+    "BAW-Sack",
+    "Plastic",
+    "Paper_Cardboard",
+    "Wagon",
+    "Container",
+    "Other"
+  ],
+  "yolov8_weights": "C:\\Hadi\\Foreign_Material\\Runs\\T500_yolo_benchmark\\yolov8m_T500_960\\weights\\best.pt",
+  "yolo11_weights": "C:\\Hadi\\Foreign_Material\\Runs\\T500_yolo_benchmark\\yolo11m_T500_960\\weights\\best.pt"
+}
