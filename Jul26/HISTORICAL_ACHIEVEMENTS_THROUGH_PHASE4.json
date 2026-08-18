@@ -1,0 +1,8 @@
+{
+  "baseline": "YOLOv8m selected over YOLO11m; good image-level alarm but insufficient object recall and exact-class accuracy.",
+  "phase1": "Mild mosaic and hierarchy were promising; balanced replay was rejected.",
+  "phase2": "Optimized generic detector plus exact classifier improved sensitivity and class-aware F1 but reduced specificity.",
+  "phase3": "Explicit Background_NotFO rejection restored validation specificity and remains the validated deployment configuration.",
+  "phase4": "Finalized a three-stage architecture: Any-FM detector, binary FO/background verifier, and exact four-class classifier.",
+  "phase4b": "Fine operating-point and rescue-gate refinement passed internal development but failed locked master validation; included here as engineering inference mode."
+}

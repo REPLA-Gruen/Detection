@@ -1,0 +1,275 @@
+{
+  "project_name": "CCBRE_ForeignMaterial_ContextHybrid_Final",
+  "threshold": 400,
+  "source_yamls": [
+    "C:\\Hadi\\Foreign_Material\\Data\\Ours\\Jul-26\\dataset.yaml"
+  ],
+  "dataset_output": "C:\\Hadi\\Foreign_Material\\Data\\Ours\\Jul-26\\T_Core_Other_T{T}",
+  "runs_root": "C:\\Hadi\\Foreign_Material\\Runs\\CCBRE_ContextHybrid_T{T}_Final",
+  "existing_phase4b": {
+    "runs_root": "C:\\Hadi\\Foreign_Material\\Runs\\T_Core_Other_T400_Final",
+    "models_root": "C:\\Hadi\\Foreign_Material\\Runs\\T_Core_Other_T400_Final\\FINAL_MODELS",
+    "stage_a": "C:\\Hadi\\Foreign_Material\\Runs\\T_Core_Other_T400_Final\\FINAL_MODELS\\StageA_AnyFM_Detector\\best.pt",
+    "stage_b": "C:\\Hadi\\Foreign_Material\\Runs\\T_Core_Other_T400_Final\\FINAL_MODELS\\StageB_Binary_Verifier\\best.pt",
+    "stage_c": "C:\\Hadi\\Foreign_Material\\Runs\\T_Core_Other_T400_Final\\FINAL_MODELS\\StageC_Exact_Classifier\\best.pt",
+    "stage_a_training_view": "C:\\Hadi\\Foreign_Material\\Runs\\T_Core_Other_T400_Final\\TRAINING_ASSETS\\StageA_Final_Replay_View"
+  },
+  "device": "0",
+  "workers": 8,
+  "seed": 42,
+  "copy_mode": "hardlink",
+  "dataset_creation": {
+    "threshold_rule": "at_least",
+    "dataset_policy": "natural",
+    "train_ratio": 0.8,
+    "val_ratio": 0.1,
+    "split_trials": 200,
+    "keep_exact_duplicates": true,
+    "write_masks": true,
+    "require_core_classes": [
+      "BAW-Sack",
+      "Papier",
+      "Plastiksack"
+    ]
+  },
+  "verification": {
+    "max_images_per_split": 200,
+    "fail_on_error": true
+  },
+  "pretrained": {
+    "search_root": "C:\\Hadi\\Foreign_Material\\Runs\\T_Core_Other_T400",
+    "stage_a_checkpoint": "C:\\Hadi\\Foreign_Material\\Runs\\T_Core_Other_T400\\PHASE4_FINAL_MODELS\\StageA_AnyFM_Detector\\best.pt",
+    "stage_b_checkpoint": "C:\\Hadi\\Foreign_Material\\Runs\\T_Core_Other_T400\\PHASE4_FINAL_MODELS\\StageB_Binary_Verifier\\best.pt",
+    "stage_c_checkpoint": "C:\\Hadi\\Foreign_Material\\Runs\\T_Core_Other_T400\\PHASE4_FINAL_MODELS\\StageC_Exact_Classifier\\best.pt",
+    "use_generic_pretrained_when_selected_missing": true,
+    "force_scratch": false,
+    "final_models_root": "C:\\Hadi\\Foreign_Material\\Runs\\T_Core_Other_T400\\PHASE4_FINAL_MODELS"
+  },
+  "training": {
+    "reuse_completed_base_runs": true,
+    "overwrite_training_assets": true,
+    "skip_ultralytics_amp_check": true,
+    "amp": true,
+    "stage_a": {
+      "selected_folder_name": "P4_AnyFM_m025_replay015",
+      "generic_pretrained": "yolov8m.pt",
+      "scratch_architecture": "yolov8m.yaml",
+      "imgsz": 1536,
+      "epochs": 150,
+      "patience": 20,
+      "batch": 4,
+      "optimizer": "AdamW",
+      "lr0": 0.001,
+      "lrf": 0.01,
+      "momentum": 0.937,
+      "weight_decay": 0.0005,
+      "warmup_epochs": 3.0,
+      "mosaic": 0.25,
+      "close_mosaic": 10,
+      "negative_ratio": 1.0,
+      "hard_positive_replay_fraction": 0.15,
+      "audit_confidence_floor": 0.05,
+      "audit_low_confidence": 0.25,
+      "audit_poor_iou": 0.2,
+      "nms_iou": 0.7
+    },
+    "stage_b": {
+      "selected_folder_name": "P4_binary_verifier_BG100_448",
+      "generic_pretrained": "yolov8m-cls.pt",
+      "scratch_architecture": "yolov8m-cls.yaml",
+      "imgsz": 448,
+      "epochs": 140,
+      "patience": 30,
+      "batch": 24,
+      "optimizer": "AdamW",
+      "lr0": 0.0003,
+      "lrf": 0.01,
+      "weight_decay": 0.0005,
+      "warmup_epochs": 3.0,
+      "dropout": 0.1,
+      "background_ratio": 1.0,
+      "preferred_negative_image_fraction": 0.75
+    },
+    "stage_c": {
+      "selected_folder_name": "P4_exact_classifier_H030_320",
+      "fallback_selected_folder_names": [
+        "yolov8m_cls_T400_gtcrops_320"
+      ],
+      "generic_pretrained": "yolov8m-cls.pt",
+      "scratch_architecture": "yolov8m-cls.yaml",
+      "imgsz": 320,
+      "initial_epochs": 60,
+      "initial_patience": 12,
+      "epochs": 110,
+      "patience": 25,
+      "batch": 32,
+      "optimizer": "AdamW",
+      "lr0": 0.0003,
+      "lrf": 0.01,
+      "weight_decay": 0.0005,
+      "warmup_epochs": 3.0,
+      "dropout": 0.05,
+      "hard_replay_fraction": 0.3
+    },
+    "crop_mining": {
+      "detector_confidence_floor": 0.05,
+      "nms_iou": 0.7,
+      "crop_margin": 0.15,
+      "maximum_iou_with_any_gt": 0.05,
+      "maximum_intersection_over_proposal": 0.1,
+      "maximum_background_crops_per_image": 6,
+      "exact_low_confidence": 0.55,
+      "exact_low_margin": 0.15
+    }
+  },
+  "uavvaste": {
+    "workspace": "C:\\Hadi\\Foreign_Material\\Data\\Public\\UAVVaste",
+    "archive": "C:\\Hadi\\Foreign_Material\\Data\\Public\\UAVVaste\\UAVVasteDataset.zip",
+    "prepared_yolo": "C:\\Hadi\\Foreign_Material\\Data\\Public\\UAVVaste_YOLO",
+    "official_url": "https://zenodo.org/records/8214061/files/UAVVasteDataset.zip?download=1",
+    "expected_md5": "1575c32c04bdf944047563e4a1786c2a",
+    "expected_split_counts": {
+      "train": 540,
+      "val": 116,
+      "test": 116
+    }
+  },
+  "stage_a_uavvaste_finetune": {
+    "external_train_ratio_to_target_images": 0.3,
+    "maximum_external_train_images": 540,
+    "imgsz": 1536,
+    "epochs": 50,
+    "patience": 12,
+    "batch": 4,
+    "optimizer": "AdamW",
+    "lr0": 0.0001,
+    "lrf": 0.01,
+    "momentum": 0.937,
+    "weight_decay": 0.0005,
+    "warmup_epochs": 1.0,
+    "mosaic": 0.1,
+    "close_mosaic": 10,
+    "degrees": 5.0,
+    "translate": 0.05,
+    "scale": 0.2,
+    "hsv_h": 0.015,
+    "hsv_s": 0.3,
+    "hsv_v": 0.25,
+    "fliplr": 0.5,
+    "amp": true,
+    "skip_ultralytics_amp_check": true
+  },
+  "stage_a_acceptance": {
+    "minimum_recall_gain": 0.01,
+    "minimum_map50_gain": 0.0,
+    "minimum_map50_95_gain": 0.0,
+    "maximum_precision_drop": 0.01
+  },
+  "operating_points": {
+    "phase4": {
+      "detector_inference_floor": 0.05,
+      "detector_confidence": 0.25,
+      "verifier_fo_threshold": 0.5,
+      "rescue_enabled": false,
+      "rescue_detector_confidence": 1.01,
+      "rescue_verifier_fo_threshold": 1.01,
+      "exact_confidence": 0.6,
+      "exact_margin": 0.0,
+      "detector_imgsz": 1536,
+      "verifier_imgsz": 448,
+      "exact_imgsz": 320,
+      "nms_iou": 0.7,
+      "verifier_crop_margin": 0.2,
+      "exact_crop_margin": 0.2,
+      "max_detections": 300
+    },
+    "phase4b_engineering": {
+      "detector_inference_floor": 0.03,
+      "detector_confidence": 0.225,
+      "verifier_fo_threshold": 0.5,
+      "rescue_enabled": true,
+      "rescue_detector_confidence": 0.5,
+      "rescue_verifier_fo_threshold": 0.3,
+      "exact_confidence": 0.6,
+      "exact_margin": 0.0,
+      "detector_imgsz": 1536,
+      "verifier_imgsz": 448,
+      "exact_imgsz": 320,
+      "nms_iou": 0.7,
+      "verifier_crop_margin": 0.2,
+      "exact_crop_margin": 0.2,
+      "max_detections": 300
+    }
+  },
+  "default_operating_point": "phase4b_engineering",
+  "testing": {
+    "split": "test",
+    "batch": 4,
+    "render": "all",
+    "match_mode": "positive_overlap",
+    "match_iou": 0.5,
+    "run_stage_a_native_metrics": true
+  },
+  "existing_final_hybrid": {
+    "models_root": "C:\\Hadi\\Foreign_Material\\Runs\\T_Core_Other_T400_Hybrid_UAVVaste\\FINAL_MODELS",
+    "stage_a": "C:\\Hadi\\Foreign_Material\\Runs\\T_Core_Other_T400_Hybrid_UAVVaste\\FINAL_MODELS\\StageA_AnyFM_Detector\\best.pt",
+    "stage_b": "C:\\Hadi\\Foreign_Material\\Runs\\T_Core_Other_T400_Hybrid_UAVVaste\\FINAL_MODELS\\StageB_Binary_Verifier\\best.pt",
+    "stage_c": "C:\\Hadi\\Foreign_Material\\Runs\\T_Core_Other_T400_Hybrid_UAVVaste\\FINAL_MODELS\\StageC_Exact_Classifier\\best.pt"
+  },
+  "context": {
+    "dataset_output": "C:\\Hadi\\Foreign_Material\\Data\\Ours\\Jul-26\\D1_Context_T{T}_Aligned",
+    "source_manifest": "C:\\Hadi\\Foreign_Material\\Data\\Ours\\Jul-26\\T_Core_Other_T{T}\\reports\\image_manifest.csv",
+    "class_names": [
+      "container",
+      "wagon"
+    ],
+    "default_family": "yolo11m",
+    "deployment_priority": [
+      "yolo11m",
+      "yolov8m"
+    ],
+    "minimum_validation_accuracy": 0.99,
+    "train_reference_yolov8": true,
+    "existing": {
+      "runs_root": "C:\\Hadi\\Foreign_Material\\Runs\\D1",
+      "yolo11m": "C:\\Hadi\\Foreign_Material\\Runs\\D1\\yolo11m_D1_640_noaug\\weights\\best.pt",
+      "yolov8m": "C:\\Hadi\\Foreign_Material\\Runs\\D1\\yolov8m_D1_640_noaug\\weights\\best.pt"
+    },
+    "training": {
+      "imgsz": 640,
+      "epochs": 150,
+      "patience": 30,
+      "batch": 16,
+      "optimizer": "AdamW",
+      "lr0": 0.001,
+      "lrf": 0.01,
+      "momentum": 0.937,
+      "weight_decay": 0.0005,
+      "warmup_epochs": 3.0,
+      "dropout": 0.0,
+      "augmentation": "none",
+      "amp": true,
+      "yolo11_pretrained": "yolo11m-cls.pt",
+      "yolov8_pretrained": "yolov8m-cls.pt",
+      "yolo11_run_name": "D1_YOLO11m_Context_640_noaug",
+      "yolov8_run_name": "D1_YOLOv8m_Context_640_noaug"
+    },
+    "evaluation": {
+      "batch": 32,
+      "render": "errors",
+      "positive_class": "container"
+    },
+    "app": {
+      "imgsz": 640,
+      "abstain_enabled": false,
+      "abstain_threshold": 0.9
+    }
+  },
+  "app": {
+    "show_analysis_panel_by_default": true,
+    "show_saved_render_panel_in_viewer_by_default": false,
+    "auto_find_foreign_gt": true,
+    "context_gt_from_filename_default": false,
+    "output_root": "C:\\Hadi\\Foreign_Material\\Runs\\CCBRE_ContextHybrid_T{T}_Final\\APP_OUTPUTS"
+  }
+}
