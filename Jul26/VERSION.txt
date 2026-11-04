@@ -1,3 +1,0 @@
-CCBRE Foreign-Material ContextHybrid Final v1.0 — 2026-08-10
-Stage 0 D1 context + Hybrid A/B/C in one product.
-Compact menu-based standalone app; aligned D1 splits; one FINAL_MODELS.
