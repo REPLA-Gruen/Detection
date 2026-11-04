@@ -1,0 +1,28 @@
+CCBRE Dual-Dataset Quality Analyzer v2.2
+=========================================
+
+1. Extract all package files into one folder.
+2. Open Windows PowerShell in that folder.
+3. Run: py -3 -m pip install -r requirements.txt
+4. Run: .\RUN_TESTS.ps1
+5. Run: .\RUN_ALL.ps1
+6. Open the generated ...\Dual_Dataset_Quality_v2.2\OPEN_FIRST.html in Chrome or Edge.
+7. ZIP the ENTIRE generated Dual_Dataset_Quality_v2.2 results directory and upload it.
+
+Default raw input paths:
+  C:\Hadi\Foreign_Material\Data\Ours\Jul-26\images
+  C:\Hadi\Foreign_Material\Data\Ours\Jul-26\labels
+  C:\Hadi\Foreign_Material\Data\Ours\Jul-26\dataset.yaml
+  C:\Hadi\Foreign_Material\Data\Ours\Oct-26\Raw
+
+Default output:
+  C:\Hadi\Foreign_Material\Data\Ours\Oct-26\Dual_Dataset_Quality_v2.2
+
+Already completed v2.0? Do not repeat image analysis unless you want a new raw-data audit.
+Use:
+  .\RUN_REPORT_ONLY.ps1 -Analysis 'C:\Hadi\Foreign_Material\Data\Ours\Oct-26\Dual_Dataset_Quality_v2.0'
+
+See README_START_HERE.md for custom paths and important interpretation caveats.
+
+For an existing v2.2 result, run: .\RUN_HTML_ONLY.ps1 -Analysis "C:\Hadi\Foreign_Material\Data\Ours\Oct-26\Dual_Dataset_Quality_v2.2"
+Then open OPEN_FIRST.html and click View all N cases after any problem description.

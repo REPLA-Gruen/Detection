@@ -1,0 +1,60 @@
+PASS overview analyzer version: 1.7.0
+PASS overview internal checks: True
+PASS overview metadata reconciliation: True
+PASS image records: 9628
+PASS unique image identifiers: 9628
+PASS object manifest rows: 14087
+PASS positive images: 4787
+PASS explicit empty images: 4841
+PASS object per-image count: 14087
+PASS class total (all): 14087
+PASS class total (by contexts): 14087
+PASS context totals: 9628
+PASS all image hashes present: 9628
+PASS all decoded hashes present: 9628
+PASS exact duplicate groups: 221
+PASS distinct byte contents: 9407
+PASS duplicate CSV groups: 221
+PASS conflicting duplicate CSV groups: 135
+PASS tier rows: 221
+PASS reference July images: 3359
+PASS valid July rows: 3359
+PASS july_rows: 28168
+PASS july_context: 22528
+PASS july_mapped: 5427
+PASS july_unmapped: 213
+PASS oct_box_min: 3860
+PASS oct_box_max: 3981
+PASS same_class_iou05_matched_min: 3565
+PASS same_class_iou05_matched_max: 3708
+PASS July context + mapped + unmapped: 28168
+PASS July foreign material counted: 5640
+PASS reference identity links: 3579
+PASS July images with versions: 3359
+PASS July multi-version count: 220
+PASS label issues: 0
+PASS matched object record lower bound: True
+PASS each match IoU threshold: True
+PASS days groups sum: 9628
+PASS day group count: 3236
+PASS day max size: 920
+PASS floorspread days counted: 2165
+PASS class mapping rows: 23
+PASS class mapping count: 19
+PASS verified images: 9628
+PASS verified objects: 14087
+PASS verified unique byte images: 9407
+PASS verified July total annotation rows: 28168
+PASS verified July foreign object rows: 5640
+PASS verified July context boxes: 22528
+PASS verified July mapped boxes: 5427
+PASS verified July unmapped boxes: 213
+PASS verified July matches low: 3565
+PASS verified July matches high: 3708
+PASS verified days groups: 3236
+PASS verified largest day group: 920
+PASS verified exact duplicate groups: 221
+
+56/56 checks passed; quality-issue rows: 141; July-diff issues: 0
+NOTE: Visual annotation quality, site identity, and canonical labels require human/partner confirmation.
+NOTE: Per-class min/max IoU matches need not sum to the global min/max because versions are selected per image.
