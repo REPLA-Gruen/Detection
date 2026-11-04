@@ -1,0 +1,53 @@
+CCBRE AI-LAB ContextHybrid — Standalone UI Update v1.1
+Date: 24 August 2026
+
+This update changes the standalone operator interface only. The frozen Stage 0 / Stage A / Stage B / Stage C model architecture and operating-point logic are unchanged.
+
+Changes
+-------
+1. Class-specific foreign-material colors
+   - BAW-Sack: blue/cyan
+   - Papier: amber
+   - Plastiksack: green
+   - Other: pink/magenta
+   - ForeignMaterial (class uncertain): purple
+
+2. GT comparison keeps audit status visible
+   - GT matched: green
+   - GT missed: orange
+   - prediction boxes retain their class color
+   - wrong/extra exact-class predictions receive an additional red inner outline
+
+3. Help menu expanded
+   - User guide & color legend
+   - Quick start
+   - Color legend
+   - Controls & metrics
+   - Keyboard shortcuts
+
+4. Adjustable analysis-result font
+   - View > Display settings...
+   - Ctrl++ / Ctrl+-
+
+5. Adjustable operator layout
+   - configurable main-window width and height
+   - configurable image-pane percentage
+   - draggable divider between image and analysis panes
+   - quick 70/30, 60/40, and 50/50 presets
+   - settings can be applied for the current session or saved into config.json
+
+6. New config.json app defaults
+   window_width = 1580
+   window_height = 980
+   min_window_width = 1000
+   min_window_height = 700
+   image_pane_percent = 67
+   analysis_font_size = 10
+
+Validation
+----------
+- all Python files: syntax PASS
+- package self-check: PASS
+- standalone CLI help smoke test: PASS
+- synthetic unlabeled class-color rendering: PASS
+- synthetic GT comparison rendering with class colors + error outline: PASS

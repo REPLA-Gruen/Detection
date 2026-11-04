@@ -1,0 +1,3 @@
+CCBRE Foreign-Material ContextHybrid Final v1.2 — 2026-08-24
+Stage 0 D1 context + Hybrid A/B/C in one product.
+Standalone UI update: compact P# image labels, class-color legend, 50–500% analysis text zoom with presets, and adjustable window/pane layout.

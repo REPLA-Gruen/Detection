@@ -1,0 +1,45 @@
+{
+  "evaluation_domain": "TARGET validation only",
+  "stage_a": {
+    "original_4B": {
+      "precision": 0.8396070018655414,
+      "recall": 0.6687848499961403,
+      "mAP50": 0.7486962991812804,
+      "mAP50_95": 0.5888287798187264
+    },
+    "uavvaste_finetuned": {
+      "precision": 0.8416156150047556,
+      "recall": 0.7113564668769716,
+      "mAP50": 0.7802145031464877,
+      "mAP50_95": 0.6104724334679934
+    }
+  },
+  "stage_b": {
+    "original_4B": {
+      "TN": 438,
+      "FP": 85,
+      "FN": 77,
+      "TP": 557,
+      "accuracy": 0.8599827139152982,
+      "foreign_material_recall": 0.8785488958990536,
+      "background_specificity": 0.8374760994263862,
+      "balanced_accuracy": 0.8580124976627199,
+      "foreign_material_f1": 0.8730407523510971
+    },
+    "uavvaste_finetuned": {
+      "TN": 430,
+      "FP": 93,
+      "FN": 82,
+      "TP": 552,
+      "accuracy": 0.8487467588591184,
+      "foreign_material_recall": 0.8706624605678234,
+      "background_specificity": 0.8221797323135756,
+      "balanced_accuracy": 0.8464210964406995,
+      "foreign_material_f1": 0.8631743549648163
+    }
+  },
+  "recommendation_rule": {
+    "stage_a": "Do not promote unless target validation recall improves without unacceptable mAP loss.",
+    "stage_b": "Do not promote unless target balanced accuracy / FO recall improve without specificity collapse."
+  }
+}

@@ -1,0 +1,341 @@
+{
+  "package": "CCBRE_ForeignMaterial_ContextHybrid_Final_v1_2_UI",
+  "version": "1.2",
+  "date": "2026-08-24",
+  "scope": "Standalone UI/rendering enhancement only; frozen Stage 0/A/B/C model architecture, checkpoints, and operating-point inference logic unchanged.",
+  "validation": {
+    "python_syntax": "PASS",
+    "package_self_check": "PASS",
+    "standalone_cli_help_smoke_test": "PASS",
+    "synthetic_compact_prediction_id_rendering": "PASS",
+    "synthetic_gt_overlay_rendering": "PASS",
+    "analysis_zoom_math_80_100_120_150_200_500": "PASS"
+  },
+  "files": [
+    {
+      "file": "00_check_final_inputs.py",
+      "bytes": 1740,
+      "sha256": "061aa985a10762e7daf89d73ab9c83e3699d3f911b2e2eefef86e52722b8c226"
+    },
+    {
+      "file": "01_create_dataset.py",
+      "bytes": 65736,
+      "sha256": "1f34f80068356956397df1aa43c0983104ab9644cf1e917e87a93dfaba7d9ea5"
+    },
+    {
+      "file": "02_verify_dataset.py",
+      "bytes": 32140,
+      "sha256": "018445dbc2d1015b6259a1b3e26bb298da82a8a3e6a9476ffb15d1e99cbc1ccc"
+    },
+    {
+      "file": "03_train_base_models.py",
+      "bytes": 19050,
+      "sha256": "5fef26236bb5e890c8564bb0ac1f79bcd169ebaaf6cddccdda135949408f92bb"
+    },
+    {
+      "file": "04_import_existing_phase4b.py",
+      "bytes": 2186,
+      "sha256": "2cc374edcdcc3b3166ca2db86784e3fee66cfeffd5c06c4e9831a90f745026ee"
+    },
+    {
+      "file": "05_prepare_uavvaste.py",
+      "bytes": 7098,
+      "sha256": "6d9191651a26f06fc2fa45940961ad55afd36253cf754fc6001e07f3cf3311d0"
+    },
+    {
+      "file": "06_verify_uavvaste.py",
+      "bytes": 3725,
+      "sha256": "7ac212abea03c458d950de381a15724a3abd30af62cb02632191694d86bdb8ec"
+    },
+    {
+      "file": "07_finetune_stageA_uavvaste.py",
+      "bytes": 6414,
+      "sha256": "39730d85f4d0db812e97e826f102ea9b534c41a58be1e552aa0d338faf2b1284"
+    },
+    {
+      "file": "08_compare_stageA.py",
+      "bytes": 2589,
+      "sha256": "4679de2de9033df27071efcbc2cfeb0ce6f5fa80ca2cebd94e4ed8606dd3fb1f"
+    },
+    {
+      "file": "10_test_evaluate_render.py",
+      "bytes": 25571,
+      "sha256": "18eaee96658b7086123befd7293c2f68ea4c985bbdd66795ceef59d25091f221"
+    },
+    {
+      "file": "11_compare_base_vs_hybrid.py",
+      "bytes": 2423,
+      "sha256": "cb7d44959dccc44b8cdc5251c246258e25b312144246efc5e5655010590bd8d4"
+    },
+    {
+      "file": "19_train_foreign_base_fresh.py",
+      "bytes": 1468,
+      "sha256": "66394d348ceafb9f7696d923c6f3f15ee399389661b2d65631ec71175c40f8f9"
+    },
+    {
+      "file": "20_create_D1_aligned.py",
+      "bytes": 4231,
+      "sha256": "c1b05b8bab2864bff09e3c70838bf2cabe1234f7657a33d315d6d4ca0c55dda3"
+    },
+    {
+      "file": "21_verify_D1_aligned.py",
+      "bytes": 2308,
+      "sha256": "033369df996136a9203d1fb21ae27d445c2c242ae96724ffe1ffc8ad5f68d374"
+    },
+    {
+      "file": "22_train_D1_context.py",
+      "bytes": 2948,
+      "sha256": "d1eeca516597df106d8696fc4f5378fb07b685c916a978429185567b8ed4d24b"
+    },
+    {
+      "file": "23_import_existing_D1.py",
+      "bytes": 2101,
+      "sha256": "e27f031363f639733de44b0fef5d07a0085b604ee48d7b09c49a0c802024b976"
+    },
+    {
+      "file": "24_evaluate_D1_context.py",
+      "bytes": 4437,
+      "sha256": "b304a4a720910431a33e5373d1dc71fe6abe19182ef6bcb84ee730a84eb2beee"
+    },
+    {
+      "file": "25_import_existing_hybrid.py",
+      "bytes": 2012,
+      "sha256": "60f8b0bdbc1ffe00029c62d06d11db14f932a829e22028dca36ed9ede52b9fb7"
+    },
+    {
+      "file": "26_consolidate_unified_models.py",
+      "bytes": 4992,
+      "sha256": "cecf5043910387ff103ddf6d2ac2ea0729d33ed6d58e509e874f869c3a18f045"
+    },
+    {
+      "file": "27_verify_unified_product.py",
+      "bytes": 2249,
+      "sha256": "f6d50a57aa43af1cc484132486c395bbd0b3be7eacdb6beec89092fe5ae899d4"
+    },
+    {
+      "file": "28_test_complete_system.py",
+      "bytes": 3499,
+      "sha256": "00be91b9cf80d9f08ac49181c9e32d441fa3e069d089ed7522a019078728cd25"
+    },
+    {
+      "file": "29_batch_analyze_folder.py",
+      "bytes": 2340,
+      "sha256": "ae88acb1a13dc4a046c17ab692dff09f92ac4f054aa754a0ecc08a4aa1f1bb0b"
+    },
+    {
+      "file": "30_verify_package_code.py",
+      "bytes": 2342,
+      "sha256": "88393db525bd2d09505cd7afa18a2eeaca592b9e52db116e3a771e8391f57f5b"
+    },
+    {
+      "file": "BUILD_WINDOWS_APP.ps1",
+      "bytes": 779,
+      "sha256": "fcba4f9977a0c9a04739ac4985f868593ca86b12e1ebff7e65c0d884c0da9afb"
+    },
+    {
+      "file": "CHECK_PACKAGE.ps1",
+      "bytes": 158,
+      "sha256": "b806ca3fab3b16d6100f317f0849a30556e1afe6ded3a39668bacc8163be224e"
+    },
+    {
+      "file": "FINAL_ARCHITECTURE.txt",
+      "bytes": 577,
+      "sha256": "34cfda68f56d0fe101602fd7743a0097ab5efb707df67566613e805cb7cca1e1"
+    },
+    {
+      "file": "HISTORICAL_ACHIEVEMENTS_THROUGH_PHASE4.json",
+      "bytes": 789,
+      "sha256": "4c5e64f046b9286a8a0660b14ccd149e3dafac3da5f45ffe5c665723bb6639d0"
+    },
+    {
+      "file": "PRODUCT_ACHIEVEMENTS.json",
+      "bytes": 2164,
+      "sha256": "0da0a6381bdcafba362466f7ee5ac11cc82fc9d6fca2af366a4ad4c9451582cd"
+    },
+    {
+      "file": "README.txt",
+      "bytes": 9928,
+      "sha256": "57556a00f785a1090300b214eb2dbb976f1d4c4d146726c5fcf25ae3c17e329c"
+    },
+    {
+      "file": "REFERENCE_HYBRID_v1_1_README.txt",
+      "bytes": 12717,
+      "sha256": "413e88491a9e7407e59c565061a16d264db348d837a11d8591e3bcd3a9aed835"
+    },
+    {
+      "file": "REFERENCE_RESULTS/SCIENTIFIC_DECISION.json",
+      "bytes": 628,
+      "sha256": "ca1cabf30b0b2a777274e3bd472130c83eeec12cc03a3db5ecd16fbb382ab0f1"
+    },
+    {
+      "file": "REFERENCE_RESULTS/observed_uavvaste_comparison.json",
+      "bytes": 1412,
+      "sha256": "5777e29d12ac03fc03da22b969009d0bb694ae8229aefbf2cd04c8d2ac288e56"
+    },
+    {
+      "file": "RUN_FINAL_PRODUCT.ps1",
+      "bytes": 767,
+      "sha256": "0ebf0e63156b41e4de83dc31ee090c2eba5de3f68963d7f11891e805491cfbea"
+    },
+    {
+      "file": "STANDALONE_APP.py",
+      "bytes": 40637,
+      "sha256": "889a51bf1f2f4133c0088a0d05d9555ca8e924e949e7ccba21c738c361a873ef"
+    },
+    {
+      "file": "START_APP.ps1",
+      "bytes": 191,
+      "sha256": "e1b1e6b5475aeddd18f1083587e06bd1d61010de880111590343b15aad154763"
+    },
+    {
+      "file": "UI_CHANGES_v1_1.txt",
+      "bytes": 1622,
+      "sha256": "31c423d4ac56685686d8ee7f56e5f00f0340fa9be7a7de8ad9a5272d7a4938b7"
+    },
+    {
+      "file": "UI_CHANGES_v1_2.txt",
+      "bytes": 1596,
+      "sha256": "d25e2daa7b19cfea247d5f70b19a60ad725c2186a2f25e353cc0465e6a096f54"
+    },
+    {
+      "file": "VERSION.txt",
+      "bytes": 258,
+      "sha256": "b1488603de1efe603e5e0b67e4a7eb58cdec63d50f795a4dae00b60bc9b8fd52"
+    },
+    {
+      "file": "assets/CCBRE_AI_LAB_Logo.ico",
+      "bytes": 93065,
+      "sha256": "11f53710f88384086ffc2f65e8a888a1da92484c462d14f8910ff7bc880107e6"
+    },
+    {
+      "file": "assets/CCBRE_AI_LAB_Logo.png",
+      "bytes": 453119,
+      "sha256": "d7a84a08479b4adebf9d51bcfd484a8eb64a1f180c2b904999ddc79750a54744"
+    },
+    {
+      "file": "audit_hard_positives.py",
+      "bytes": 4989,
+      "sha256": "656efbecbd59217939008800490a400fa654ed60c51fe012fc171684bd7e2192"
+    },
+    {
+      "file": "build_anyfm_replay_view.py",
+      "bytes": 4546,
+      "sha256": "e12ec08e21545fa438a3f69a2de3cef637f5988d3c19b554ac84aaf452a9eefe"
+    },
+    {
+      "file": "build_classifier_views.py",
+      "bytes": 5116,
+      "sha256": "488d063f51f1c199ea37f44e59b6f49f00b9bf4dbd169cb75b6de92f0877c1a6"
+    },
+    {
+      "file": "build_initial_exact_view.py",
+      "bytes": 2791,
+      "sha256": "aa2dff22e9a32a1a77320aaaaf8d95624902c3419b9bd284f3fde2704080b1e7"
+    },
+    {
+      "file": "build_stagebc_crop_pool.py",
+      "bytes": 7655,
+      "sha256": "5b6166a331c384c982ec444452efba0f6a891b40c993ced64c808ee7af85298f"
+    },
+    {
+      "file": "check_D1_environment.py",
+      "bytes": 702,
+      "sha256": "b3f874293b3804d16fdd3343196f123ff8e413b6375245ad79aa028aaa9d3f9d"
+    },
+    {
+      "file": "combined_rendering.py",
+      "bytes": 1002,
+      "sha256": "1eb1aa4aa9d5578d9d9dc64173a660232444b6e0c9e8d08c82f694a25e411b10"
+    },
+    {
+      "file": "common.py",
+      "bytes": 939,
+      "sha256": "2f455d6e487d8c21ece61b018ef2694da9edcc0e69148fce084850994ac22e17"
+    },
+    {
+      "file": "compare_D1_models.py",
+      "bytes": 3901,
+      "sha256": "ce3824207f8e160023f05a1e783118ad02c3e48ddbaad81824397505263af6e1"
+    },
+    {
+      "file": "config.json",
+      "bytes": 9498,
+      "sha256": "4f6a85848831526b01fae5cb174d7f2035d4c04011e6ff24fe62a62c2fdc847b"
+    },
+    {
+      "file": "context_inference.py",
+      "bytes": 1580,
+      "sha256": "0011d1185b6252d9b628387139e06cfe4a1ceea9c4dace742ce4b503e41efa83"
+    },
+    {
+      "file": "d1_train_common.py",
+      "bytes": 10215,
+      "sha256": "f8f946b5bcf2cfaeee8f8d07eaba40bf53ea8baaedf4eb453c4986a0230c9dc8"
+    },
+    {
+      "file": "evaluate_D1_classifier.py",
+      "bytes": 20686,
+      "sha256": "3d485f02183ec18098f0f071b839c913818e52c5b80a89ee7dd7a2e41d91de3c"
+    },
+    {
+      "file": "evaluate_TCoreOther_comprehensive.py",
+      "bytes": 49864,
+      "sha256": "0f22b41021f15636e9264ded3f11cf0f3a8480d37605ba90756df5eddf7ca0a9"
+    },
+    {
+      "file": "phase4_common.py",
+      "bytes": 2894,
+      "sha256": "db048fad9dea1d494aac3612c787b209f61d1f19ec54cf3ebfb7a0cbc9bf637c"
+    },
+    {
+      "file": "phase4_inference.py",
+      "bytes": 14455,
+      "sha256": "0f65d61551b4877753e4d7e7fff9e56d5080f652f966241ec3d26d5327da9841"
+    },
+    {
+      "file": "phase4_rendering.py",
+      "bytes": 15424,
+      "sha256": "921bf09fdc710000d51c59e7d595d2092086cf5666f90fb86697712bd159ba3d"
+    },
+    {
+      "file": "requirements.txt",
+      "bytes": 140,
+      "sha256": "a94e8f985fa8fbe689eb82968516a82c55a2b2195cd16450976057a16769f065"
+    },
+    {
+      "file": "run_pipeline.py",
+      "bytes": 7073,
+      "sha256": "df51316f4425966f1151b5629daf1a9378cd8c30521906be059535b800baefe1"
+    },
+    {
+      "file": "tcore_train_common.py",
+      "bytes": 21514,
+      "sha256": "296584817848a3b91732d4aad7f139e9a215dbc558474231f0d50d84ba5a1737"
+    },
+    {
+      "file": "train_D1_yolo11.py",
+      "bytes": 694,
+      "sha256": "76fdcba3d1864211bc360af7b99e4a0b4584fec749724d56256d91a61fb684e5"
+    },
+    {
+      "file": "train_D1_yolov8.py",
+      "bytes": 694,
+      "sha256": "962abc05ac82b9deac85815ded840120936b1d92553f376201661d0bb1f5a9db"
+    },
+    {
+      "file": "train_anyfm_detector.py",
+      "bytes": 2948,
+      "sha256": "8dbe536db72779b6f7a67ce279d0fa6440aa7575ca55cc2649f9b777b7f68e8c"
+    },
+    {
+      "file": "train_phase4_classifier.py",
+      "bytes": 2823,
+      "sha256": "7e88a8bda84f68b57d5e65fdf2e4d1aa0e15810cffd2cab9109ffee8be331a48"
+    },
+    {
+      "file": "ultralytics_runtime.py",
+      "bytes": 754,
+      "sha256": "3ee6e110e42eef78bf2dab73c3354ae32f0a1b4a1f85c75bd1edb48d6fb739ac"
+    }
+  ]
+}

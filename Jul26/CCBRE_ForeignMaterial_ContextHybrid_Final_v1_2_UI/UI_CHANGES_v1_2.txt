@@ -1,0 +1,39 @@
+CCBRE AI-LAB ContextHybrid — Standalone UI Update v1.2
+Date: 24 August 2026
+
+This update changes the standalone operator interface/rendering only. The frozen Stage 0 / Stage A / Stage B / Stage C models and operating-point logic are unchanged.
+
+Changes
+-------
+1. Compact prediction labels on the photo
+   - prediction boxes show only P1, P2, P3, ...
+   - FO class names are no longer printed beside the boxes
+   - material identity is communicated by the box color
+   - full class names and confidence values remain available in Analysis Results and in the saved information panel/JSON
+
+2. Color mapping retained and documented in Help
+   - BAW-Sack: blue/cyan
+   - Papier: amber
+   - Plastiksack: green
+   - Other: pink/magenta
+   - class uncertain: purple
+   - GT comparison retains green matched / orange missed GT boxes and the red inner error outline for wrong/extra exact-class predictions
+
+3. Percentage zoom for Analysis Results
+   - View > Analysis text zoom presets: 80%, 100%, 120%, 150%, 200%, 500%
+   - View > Analysis text zoom > Custom... accepts 50–500%
+   - Ctrl++ / Ctrl+- step through zoom levels
+   - Ctrl+0 resets analysis text to 100%
+   - base font size and default zoom can be changed/saved through View > Display settings...
+
+4. Layout controls from v1.1 are retained
+   - custom window width/height
+   - image/analysis pane ratio
+   - draggable pane divider
+
+Validation
+----------
+- all Python files: syntax PASS
+- package self-check: PASS
+- standalone CLI help smoke test: PASS
+- synthetic rendering: prediction tags verified as P# only with class-specific colors

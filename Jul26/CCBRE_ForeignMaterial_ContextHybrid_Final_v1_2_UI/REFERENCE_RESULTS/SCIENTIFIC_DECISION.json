@@ -1,0 +1,14 @@
+{
+  "basis": "Observed target-validation comparison supplied by user",
+  "stage_a_decision": "USE UAVVaste-fine-tuned Stage A candidate",
+  "stage_b_decision": "KEEP original/base 4B Stage B",
+  "stage_c_decision": "KEEP original/base 4B Stage C",
+  "observed_stage_a_delta": {
+    "precision": 0.002008613139214188,
+    "recall": 0.04257161688083133,
+    "mAP50": 0.031518203965207214,
+    "mAP50_95": 0.021643653649267014
+  },
+  "observed_stage_b_result": "UAVVaste fine-tuning degraded target validation, therefore excluded from this product.",
+  "product_architecture": "A=tuned with target+UAVVaste; B=base 4B; C=base 4B"
+}
